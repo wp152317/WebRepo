@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+window.onload=function(){
+	var id="2317";
+	var name="Stoad";
+	var age=18;
+	var height=175;
+	var hobby=["게임"];
+	console.log(typeof id);
+	console.log(typeof name);
+	console.log(typeof age);
+	console.log(typeof height);
+	console.log(typeof hobby);
+	console.log(typeof hobby[0]);
+	document.getElementById("profile").innerHTML=
+		"<ul><li>학번 : "+id+"</li>"+
+		"<li>이름 : "+ name+"</li>"+
+		"<li>나이 : "+age+"</li>"+
+		"<li>키 : "+height+"</li>"+
+		"<li>취미 : "+hobby+"</li></ul>";
+}
+</script>
+</head>
+<body>
+<h1>PROFILE</h1>
+<p id=profile></p>
+</body>
+</html>

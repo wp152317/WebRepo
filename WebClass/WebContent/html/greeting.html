@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+window.onload=function(){
+	document.getElementById("kor").onclick=function(){
+		document.getElementById("how").innerHTML="Each Countries' \"안녕하세요\"";
+	}
+	document.getElementById("US").onclick=function(){
+		document.getElementById("how").innerHTML="Each Countries' \"Hello\"";
+	}
+	document.getElementById("Chn").onclick=function(){
+		document.getElementById("how").innerHTML="Each Countries' \"Ni Hao\"";
+	}
+}
+function greeting(nat){
+	document.getElemenyById("nat").onclick()
+}
+</script>
+</head>
+<body>
+<p id=how>Each Countries' "Hello"</p>
+<button id=kor>한국</button>
+<button id=US>미국</button>
+<button id=Chn>중국</button>
+</body>
+</html>
