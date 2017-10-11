@@ -56,23 +56,18 @@ $(document).ready(function (){
 		var pwd=$('#inputPassword').val();
 		var name=$('#inputName').val();
 		var nickName=$('#inputNickName').val();
+		console.log(id,pwd,name,nickName);
 		$.post("/WebClass/signup",
 			{id: id, pwd : pwd, name : name , nickName : nickName},
 			function(data){
-				if(<%=(UserVo)request.getAttribute("signupData")==null%>){
-					location.href="jsp/login.jsp";
+				if(data.suc){
+					location.href="/WebClass/login";
 				}
 				else{
-					<%
-						UserVo user=(UserVo)request.getAttribute("signupData");
-					%>
-					document.getElementById("inputEmail").value = <%= user.getId()%>;
-					document.getElementById("inputPassword").value = <%= user.getPwd()%>;
-					document.getElementById("inputName").value = <%= user.getName()%>;
-					document.getElementById("inputNickName").value = <%= user.getNickname()%>;
-					<%
-					request.removeAttribute("signupData");
-					%>
+					var myModal = $('#mM');
+					myModal.find('.modal-title').text('Sign Up Error');
+					myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
+					myModal.modal();
 				}
 			}
 		);

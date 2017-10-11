@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -11,26 +13,7 @@
     <script type="text/javascript" src="../js/menu.js"></script>
   </head>
   <body style="background-color:#000000">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="index.html">HOME</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-    <ul class='navbar-nav mr-auto'>
-      <li class='nav-item' onMouseOver='menu_in(this)' onMouseOut='menu_out(this)'>
-        <a class='nav-link' href='openGL.html'>OpenGL<span class='sr-only'>(current)</span></a>
-      </li>
-      <li class='nav-item' onMouseOver='menu_in(this)' onMouseOut='menu_out(this)'>
-        <a class='nav-link' href='algorithm.html'>Algorithm</a>
-      </li>
-      <li class='nav-item' onMouseOver='menu_in(this)' onMouseOut='menu_out(this)'>
-        <a class='nav-link' href='game.html'>Game</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <%@include file="menu.jsp" %>
 	<div class="container" style="color:#ffffff;">
     <h1 id="title" style="text-align:center;">Algorithm</h1>
 	</div>
@@ -46,7 +29,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 	
-	
-    
+	<%@ include file="modal.jsp" %>
+    <% if(request.getAttribute("error")!=null){ %>
+    <script type="text/javascript" src="/WebClass/js/modal.js"></script>
+    <%request.setAttribute("error", null);} %>
   </body>
 </html>
