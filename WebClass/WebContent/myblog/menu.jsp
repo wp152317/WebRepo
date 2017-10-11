@@ -23,7 +23,8 @@
 				href='/WebClass/myblog/game.jsp'>Game</a></li>
 		</ul>
 		<%
-			if ((MemberVo) session.getAttribute("user") == null) {
+			if (/*(MemberVo)*/ session.getAttribute("user") == null) 
+			{
 		%>
 		<div class='form-inline my-2 my-lg-0'>
 			<form id='loginForm' action="/WebClass/bloglogin" method="post">
@@ -48,7 +49,8 @@
 				<button type="button" class="btn dropdown-toggle"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 					style="background-color: rgba(255, 255, 255, 0); color: white;padding:7px;margin-left:3px;">
-					<%=((MemberVo) session.getAttribute("user")).getName()%>
+					<%--<%=((MemberVo) session.getAttribute("user")).getName()%>--%>
+					Stoad
 				</button>
 				<div class="dropdown-menu" style="width: 0; min-width: 85px;">
 					<a class="dropdown-item" href="/WebClass/bloglogout"
