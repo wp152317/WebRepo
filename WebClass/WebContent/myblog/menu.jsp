@@ -1,5 +1,5 @@
-<%@page import="org.dimigo.vo.MemberVo"%>
-<%@ page language="java" pageEncoding="utf-8"%>
+<%--<%@page import="org.dimigo.vo.MemberVo"%>
+ --%><%@ page language="java" pageEncoding="utf-8"%>
 <script type="text/javascript" src="/WebClass/js/menu.js"></script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="/WebClass/myblog/index.jsp">HOME</a>
