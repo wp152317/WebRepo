@@ -73,7 +73,6 @@
 	%>
 	<script type="text/javascript" src="/WebClass/js/modal.js"></script>
 	<%
-		request.setAttribute("error", null);
 		}
 	%>
 </body>
