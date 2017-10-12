@@ -1,5 +1,5 @@
-<%--<%@page import="org.dimigo.vo.MemberVo"%>
- --%><%@ page language="java" pageEncoding="utf-8"%>
+<%@page import="org.dimigo.vo.MemberVo"%>
+<%@ page language="java" pageEncoding="utf-8"%>
 <script type="text/javascript" src="/WebClass/js/menu.js"></script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="/WebClass/myblog/index.jsp">HOME</a>
@@ -23,11 +23,12 @@
 				href='/WebClass/myblog/game.jsp'>Game</a></li>
 		</ul>
 		<%
-			if (/*(MemberVo)*/ session.getAttribute("user") == null) 
+			if ((MemberVo) session.getAttribute("user") == null) 
 			{
-				String id=(String)session.getAttribute("error");
-				if(id==null){
-					id="";
+				MemberVo mv=((MemberVo)session.getAttribute("error"));
+				String id="";
+				if(mv!=null){
+					id=mv.getId();	
 				}
 		%>
 		<div class='form-inline my-2 my-lg-0'>
@@ -53,8 +54,7 @@
 				<button type="button" class="btn dropdown-toggle"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 					style="background-color: rgba(255, 255, 255, 0); color: white;padding:7px;margin-left:3px;">
-					<%--<%=((MemberVo) session.getAttribute("user")).getName()%>--%>
-					Stoad
+					<%=((MemberVo) session.getAttribute("user")).getName()%>
 				</button>
 				<div class="dropdown-menu" style="width: 0; min-width: 85px;">
 					<a class="dropdown-item" href="/WebClass/bloglogout"

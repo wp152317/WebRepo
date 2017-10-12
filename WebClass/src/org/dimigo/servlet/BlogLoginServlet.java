@@ -60,7 +60,9 @@ public class BlogLoginServlet extends HttpServlet {
 			rd.forward(request,response);
 		}
 		else{
-			session.setAttribute("error",id);
+			MemberVo mv=new MemberVo();
+			mv.setId(id);
+			session.setAttribute("error",mv);
 			//session.setAttribute("error-id", id);
 			RequestDispatcher rd=request.getRequestDispatcher("myblog/index.jsp");
 			rd.forward(request, response);
