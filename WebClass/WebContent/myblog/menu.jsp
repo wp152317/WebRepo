@@ -25,9 +25,8 @@
 		<%
 			if (/*(MemberVo)*/ session.getAttribute("user") == null) 
 			{
-				String id=(String)request.getAttribute("error");
+				String id=(String)session.getAttribute("error");
 				if(id==null){
-					request.removeAttribute("error");
 					id="";
 				}
 		%>

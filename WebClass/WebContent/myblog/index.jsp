@@ -31,8 +31,8 @@
 	<!-- Modal -->
 	<%@ include file="modal.jsp" %>
     
-    <% if(request.getAttribute("error")!=null){ %>
+    <% if(session.getAttribute("error")!=null){ %>
     <script type="text/javascript" src="/WebClass/js/modal.js"></script>
-    <%} %>
+    <%session.removeAttribute("error");} %>
   </body>
 </html>
