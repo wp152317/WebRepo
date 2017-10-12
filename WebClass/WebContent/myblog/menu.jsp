@@ -25,11 +25,16 @@
 		<%
 			if (/*(MemberVo)*/ session.getAttribute("user") == null) 
 			{
+				String id=(String)request.getAttribute("error");
+				if(id==null){
+					request.removeAttribute("error");
+					id="";
+				}
 		%>
 		<div class='form-inline my-2 my-lg-0'>
 			<form id='loginForm' action="/WebClass/bloglogin" method="post">
 				<input class='form-control mr-sm-2' id='id' name='id' type='text'
-					placeholder='ID' aria-label='id' required> <input
+					placeholder='ID' aria-label='id' value='<%=id%>' required> <input
 					class='form-control mr-sm-2' id='pw' name='pw' type='password'
 					placeholder='PASSWORD' aria-label='pw' required>
 				<button class='btn btn-success my-2 my-sm-0' type='submit'>Sign
