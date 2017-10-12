@@ -44,7 +44,7 @@
 			MemberVo mv=((MemberVo)session.getAttribute("error"));
 			if(mv!=null){
 				%>
-					document.getElementById("id").value=<%=mv.getId()%>
+					document.getElementById("id").value='<%=mv.getId()%>'
 				<%	
 			}
 			%>
