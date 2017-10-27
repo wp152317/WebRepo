@@ -59,7 +59,7 @@
 				<button type="button" class="btn dropdown-toggle"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 					style="background-color: rgba(255, 255, 255, 0); color: white;padding:7px;margin-left:3px;">
-					<%=((MemberVo) session.getAttribute("user")).getName()%>
+					${user.getName() }
 				</button>
 				<div class="dropdown-menu" style="width: 0; min-width: 85px;">
 					<a class="dropdown-item" href="/WebClass/bloglogout"
